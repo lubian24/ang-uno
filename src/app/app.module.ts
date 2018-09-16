@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
+
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,6 @@ import { HttpModule } from '@angular/http'
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

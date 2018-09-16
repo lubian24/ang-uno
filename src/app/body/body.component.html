@@ -1,13 +1,12 @@
 <div class="container">
   <div class="card w-100" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">Cotización <span class="card-subtitle mb-2 text-muted">{{dataSvc.data.source}}</span> </h5>
+      <h5 class="card-title">Cotización <span class="card-subtitle mb-2 text-muted">{{currency?.source}}</span> </h5>
       <ul class="list-group list-group-flush" style="margin:20px 10px;">
-         Argentina <li class="list-group-item text-right">{{dataSvc.data.quotes.USDARS}}</li>
+         Argentina <li class="list-group-item text-right">{{currency?.quotes.USDARS}}</li>
         </ul>
       <a href="#" class="card-link">Actualizar</a>
-      <h6 class="card-subtitle mb-2 text-muted text-right">{{dataSvc.data.timestamp | date:'M/d/yy, h:mm a'}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted text-right">{{currency?.timestamp * 1000 | date:'yyyy-MM-dd HH:mm:ss'}}</h6>
     </div>
-  </div>
- 
+  </div> 
 </div>  

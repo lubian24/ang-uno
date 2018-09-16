@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { DataRta } from '../DataRta';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-body',
@@ -7,9 +9,21 @@ import { DataService } from '../data.service';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent {
-  data:any[]=[];
+  //quotes:any[]=[];
+  currency:DataRta;
+  moneda:string;
   constructor(private dataSvc : DataService) {
-    this.data=dataSvc.data
+    this.showCurrency();
+  }
+
+  showCurrency(){
+    this.dataSvc.getCurrency(this.moneda = 'ARS')
+    .subscribe((data:DataRta) => {
+      console.log(data);
+      this.currency = data;
+    }
+      
+    );
   }
 
 
