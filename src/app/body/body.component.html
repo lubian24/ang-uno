@@ -1,12 +1,28 @@
 <div class="container">
   <div class="card w-100" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">Cotización <span class="card-subtitle mb-2 text-muted">{{currency?.source}}</span> </h5>
-      <ul class="list-group list-group-flush" style="margin:20px 10px;">
-         Argentina <li class="list-group-item text-right">{{currency?.quotes.USDARS}}</li>
-        </ul>
-      <a href="#" class="card-link">Actualizar</a>
-      <h6 class="card-subtitle mb-2 text-muted text-right">{{currency?.timestamp * 1000 | date:'yyyy-MM-dd HH:mm:ss'}}</h6>
+      <h5 class="card-title">Cotización </h5>
+      <div class="row">
+        <select name="pais" id="pais" class="custom-select col-sm-12 col-md-10 col-lg-10"   aria-label="Paises">
+          
+          <option  *ngFor="let pais of paises; index as i" value="i">
+            {{pais}}
+          </option>
+        </select>
+        <span class="col-sm-12 col-md-2 col col-lg-2 text-right" style="padding:5px"> <h4>$ 1</h4></span>
+<!--           <ul class="list-group list-group-flush" style="margin:20px 10px;"> -->
+              <!-- <li class="list-group-item text-left">  -->
+                <select name="pais" id="pais" class="custom-select col-sm-12 col-md-10 col-lg-10" aria-label="Paises" style="float:left">
+                    <option *ngFor="let pais of paises; index as i" value="i">
+                      {{pais}}
+                    </option>
+                  </select>
+                  <span class="col-sm-12 col-md-2 col col-lg-2 text-right" style="float:right;padding:5px"> <h4>  $ {{cotizacion?.USDARS | number:'1.1-2'}} </h4></span>
+                <!-- </li> -->
+        <!-- </ul> --> 
+      </div>  
+      <a href="#" class="card-link" (click)='showCurrency()'>Actualizar</a>
+      <h6 class="card-subtitle mb-2 text-muted text-right">{{currency?.timestamp * 1000 | date:'yyyy-MM-dd HH:mm:ss'  }}</h6>
     </div>
   </div> 
 </div>  

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { URL } from '../index_url';
+import { URL, URL_LIST } from '../index_url';
 import { DataRta } from './DataRta';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,9 +11,12 @@ export class DataService {
   constructor(private http: HttpClient) {
    }
 
-   getCurrency(currency:string){
-      return this.http.get<DataRta>(URL+currency+this.url);
-   }
+  getCurrency(currency:string):Observable<DataRta[]>{
+    return this.http.get<DataRta[]>(URL+currency+this.url);
+  }
 
+  getList(){
+    return this.http.get(URL_LIST);
+  }
   
 }
