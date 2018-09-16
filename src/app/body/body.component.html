@@ -2,27 +2,31 @@
   <div class="card w-100" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Cotización </h5>
-      <div class="row">
-        <select name="pais" id="pais" class="custom-select col-sm-12 col-md-10 col-lg-10"   aria-label="Paises">
+      <div class="row" >
+        <!-- <select name="pais" id="pais" class="custom-select col-sm-12 col-md-10 col-lg-10"  aria-label="Paises"> 
           
-          <option  *ngFor="let pais of paises; index as i" value="i">
+          <option  *ngFor="let pais of paises; index as i" value="i" id="paisSeleccionado" >
             {{pais}}
           </option>
-        </select>
-        <span class="col-sm-12 col-md-2 col col-lg-2 text-right" style="padding:5px"> <h4>$ 1</h4></span>
+        </select> -->
+        <img src="../../assets/us-flag.gif" alt="" class="img-thumbnail col-lg-1 col-md-2 col-sm-12" width="10%" height="12%" style="float: left; padding:10px"><span class="col-sm-12 col-md-6 col-lg-5"> <h1>USD:</h1></span>
+        
+        <span class="col-sm-12 col-md-4 col col-lg-6 text-center" style="padding:5px"> <h4>$ 1</h4></span>
 <!--           <ul class="list-group list-group-flush" style="margin:20px 10px;"> -->
               <!-- <li class="list-group-item text-left">  -->
-                <select name="pais" id="pais" class="custom-select col-sm-12 col-md-10 col-lg-10" aria-label="Paises" style="float:left">
+                <!-- <select name="pais1" id="pais1" class="custom-select col-sm-12 col-md-10 col-lg-10" aria-label="Paises" style="float:left">
                     <option *ngFor="let pais of paises; index as i" value="i">
                       {{pais}}
                     </option>
-                  </select>
-                  <span class="col-sm-12 col-md-2 col col-lg-2 text-right" style="float:right;padding:5px"> <h4>  $ {{cotizacion?.USDARS | number:'1.1-2'}} </h4></span>
+                  </select> -->
+                   <img src="../../assets/ar-flag.gif" alt="" class="img-thumbnail col-lg-1 col-md-2 col-sm-12" width="10%" height="12%" style="float: left; padding:10px"><span class="col-sm-12 col-md-6 col-lg-5"> <h1>ARS:</h1></span>
+                  <span class="col-sm-12 col-md-4 col col-lg-6 text-center" style="padding:5px"> <h4>  $ {{cotizacion?.USDARS | number:'1.1-2'}} </h4></span>
                 <!-- </li> -->
         <!-- </ul> --> 
       </div>  
+      {{param}}
       <a href="#" class="card-link" (click)='showCurrency()'>Actualizar</a>
-      <h6 class="card-subtitle mb-2 text-muted text-right">{{currency?.timestamp * 1000 | date:'yyyy-MM-dd HH:mm:ss'  }}</h6>
+      <h6 class="card-subtitle mb-2 text-muted text-right">{{currency?.timestamp * 1000  | date:'yyyy-MM-dd HH:mm:ss'  }}</h6>
     </div>
   </div> 
 </div>  

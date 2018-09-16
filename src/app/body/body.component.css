@@ -4,3 +4,8 @@ h6{
 .row{
     padding: 10px
 }
+
+.img-thumbnail{
+    height: 12%;
+    border:none;
+}
